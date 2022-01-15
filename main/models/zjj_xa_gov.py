@@ -123,3 +123,8 @@ class PreOwnedItem(CreateModifyAtMixin, models.Model):
         default=[],
         verbose_name='小区其它在售房源'
     )
+
+    exists_mortgage = models.BooleanField(
+        default=False,
+        verbose_name='存在抵押'
+    )
