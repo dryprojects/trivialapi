@@ -128,3 +128,13 @@ class PreOwnedItem(CreateModifyAtMixin, models.Model):
         default=False,
         verbose_name='存在抵押'
     )
+
+    region = models.CharField(
+        verbose_name="区域",
+        max_length=30
+    )
+
+    from_channel = models.CharField(
+        verbose_name="登记来源",
+        max_length=20
+    )
