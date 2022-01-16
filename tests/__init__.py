@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
-# !/usr/bin/env python
+#!/usr/bin/env python
 """
-filename: dev.py
+filename: __init__.py.py
 usename: nico
-date: 2022/1/15 23:38
+date: 2022/1/16 20:00
 
 MIT License
 
@@ -27,4 +27,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from .base import *
