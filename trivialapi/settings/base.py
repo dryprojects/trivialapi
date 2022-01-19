@@ -73,6 +73,13 @@ WSGI_APPLICATION = 'trivialapi.wsgi.application'
 DATABASES = {"default": env.db("DATABASE_URL", f'sqlite:////{BASE_DIR}/db.sqlite3')}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+    },
+]
+
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
@@ -189,3 +196,8 @@ LOGGING = {
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
 CORS_URLS_REGEX = r"^/api/.*$"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20
+}

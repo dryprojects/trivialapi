@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 # !/usr/bin/env python
 """
-filename: __init__.py.py
+filename: urls.py
 usename: nico
-date: 2022/1/15 23:41
+date: 2022/1/19 17:20
 
 MIT License
 
@@ -28,8 +28,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from .zjj_xa_gov import PreOwnedItem
+from rest_framework.routers import DefaultRouter
 
-__all__ = [
-    'PreOwnedItem'
-]
+from main import views
+
+router = DefaultRouter()
+router.register('pre-owned', views.ZjjXaGovPreWoned, 'pre-owned')
+
+urlpatterns = router.urls

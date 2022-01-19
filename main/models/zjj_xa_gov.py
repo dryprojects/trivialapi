@@ -57,8 +57,9 @@ class PreOwnedItem(CreateModifyAtMixin, models.Model):
         max_length=20
     )
 
-    age_of_building = models.DateField(
-        verbose_name='建筑年代'
+    age_of_building = models.CharField(
+        verbose_name='建筑年代',
+        max_length=20
     )
 
     decoration_type = models.CharField(
@@ -119,11 +120,6 @@ class PreOwnedItem(CreateModifyAtMixin, models.Model):
         max_length=50
     )
 
-    related_sources = models.JSONField(
-        default=[],
-        verbose_name='小区其它在售房源'
-    )
-
     exists_mortgage = models.BooleanField(
         default=False,
         verbose_name='存在抵押'
@@ -134,7 +130,5 @@ class PreOwnedItem(CreateModifyAtMixin, models.Model):
         max_length=30
     )
 
-    from_channel = models.CharField(
-        verbose_name="登记来源",
-        max_length=20
-    )
+    class Meta:
+        app_label = 'main'

@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 # !/usr/bin/env python
 """
-filename: __init__.py.py
+filename: production.py
 usename: nico
-date: 2022/1/15 23:41
+date: 2022/1/19 18:16
 
 MIT License
 
@@ -28,8 +28,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from .zjj_xa_gov import PreOwnedItem
+from .base import *
 
-__all__ = [
-    'PreOwnedItem'
-]
+os.environ['DJANGO_SETTINGS_MODULE'] = 'trivialapi.settings.production'

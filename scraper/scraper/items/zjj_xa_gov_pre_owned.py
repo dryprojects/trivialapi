@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 # !/usr/bin/env python
 """
-filename: __init__.py.py
+filename: zjj_xa_gov_pre_owned.py.py
 usename: nico
-date: 2022/1/15 23:41
+date: 2022/1/17 21:11
 
 MIT License
 
@@ -28,8 +28,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from .zjj_xa_gov import PreOwnedItem
+from scrapy_djangoitem import DjangoItem
+from scrapy.loader import ItemLoader, processors
 
-__all__ = [
-    'PreOwnedItem'
-]
+from main.models import zjj_xa_gov
+
+
+class PreOwnedItem(DjangoItem):
+    django_model = zjj_xa_gov.PreOwnedItem
+
+
+class PreOwnedItemLoader(ItemLoader):
+    default_output_processor = processors.TakeFirst()

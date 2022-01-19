@@ -10,4 +10,6 @@ from itemadapter import ItemAdapter
 
 class ScraperPipeline:
     def process_item(self, item, spider):
+        item.save()
+        spider.log(f'item {item} saved')
         return item
